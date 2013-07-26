@@ -7,7 +7,6 @@
 """corplist.py: generate character list from corp name"""
 
 from sys import argv
-import operator
 
 import eveapi_simple as api
 import evewho
