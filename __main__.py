@@ -13,7 +13,11 @@ import eveapi_simple as api
 import evewho
 
 
-corpname = 'EVE University' if len(argv) <= 1 else argv[1]
+if len(argv) <= 1:
+    print("please supply corp name as argument")
+    exit(1)
+
+corpname = argv[1]
 
 result_object = api.query('/eve/CharacterID', {'names': corpname})
 corpid = result_object.result.rowset.row.attrib['characterID']
