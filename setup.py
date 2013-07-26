@@ -4,3 +4,18 @@
 
 """setup.py: generate package/binaries"""
 
+from distutils.core import setup
+import py2exe
+
+
+setup(
+    options= {'py2exe': {
+        'bundle_files': 1,
+        'compressed': True,
+        'includes': ['lxml.etree', 'lxml._elementpath', 'gzip'],
+    }},
+    windows = [{
+        'script': '__main__.py',
+        'dest_base': 'memberlist',
+    }]
+)
