@@ -13,6 +13,9 @@ class APIError(Exception):
 
 
 def query(query, args):
+    """Query the eve online API and return a result object.
+
+    Example: query('/eve/CharacterID', 'EVE University')"""
     query = _make_query_string(query, args)
     con = HTTPSConnection('api.eveonline.com')
     con.request('GET', query)

@@ -23,11 +23,12 @@ result_object = api.query('/eve/CharacterID', {'names': corpname})
 corpid = result_object.result.rowset.row.attrib['characterID']
 
 characters = evewho.corpmembers(corpid)
+characters.sort(key=lambda x: (x[0].upper(), x[0].islower()))
 
 print('<table>')
 
-for item in sorted(characters.iteritems(), key=operator.itemgetter(1)):
-    charid, charname = item
+for character_info in characters:
+    charname, charid = character_info
 
     print('\t<tr>')
     print('\t\t<td>%s</td>' % charname)

@@ -14,7 +14,11 @@ class APIError(Exception):
 
 
 def corpmembers(corpid):
-    members = {}
+    """Get a list of all members of the corporation with id corpid.
+
+    retruns a list of tuples (charname, charid)"""
+
+    members = []
     curpage = 0
     while True:
         page = _corp_page(corpid, curpage)
@@ -22,7 +26,7 @@ def corpmembers(corpid):
         if charcount == 0:
             break
         for c in page['characters']:
-            members[int(c['character_id'])] = str(c['name'])
+            members.append((c['name'], int(c['character_id'])))
 
         # delay a bit every few pages for large corps to
         # save evewho some load
