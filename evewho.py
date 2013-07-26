@@ -18,14 +18,15 @@ def corpmembers(corpid):
     curpage = 0
     while True:
         page = _corp_page(corpid, curpage)
-        if len(page['characters']) == 0:
+        charcount = len(page['characters'])
+        if charcount == 0:
             break
         for c in page['characters']:
             members[int(c['character_id'])] = str(c['name'])
 
         # delay a bit every few pages for large corps to
         # save evewho some load
-        if curpage % 3 == 0:
+        if curpage > 0 and curpage % 3 == 0 and charcount >= 200:
             time.sleep(20)
         curpage += 1
     return members
