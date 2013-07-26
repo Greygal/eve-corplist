@@ -14,3 +14,11 @@ or
 from one directory above the one you checked out.
 
 For larger corporations this can take a while since the script has some delays to take load off evewho.com.
+
+
+Requirements
+============
+
+lxml module
+
+Tested on Python 2.7
