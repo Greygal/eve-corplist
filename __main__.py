@@ -37,7 +37,7 @@ for character_info in characters:
     print('\t\t<td class="igblink" onclick="CCPEVE.showInfo(1377, ''%s)">'
           'showinfo</td>' % charid)
     print('\t\t<td class="igblink" onclick="CCPEVE.addContact(''%s)">'
-          'watchlist</a></td>' % charid)
+          'watchlist</td>' % charid)
     print('\t</tr>')
 
 print('</table>')
