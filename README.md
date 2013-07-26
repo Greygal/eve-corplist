@@ -15,6 +15,8 @@ from one directory above the one you checked out.
 
 For larger corporations this can take a while since the script has some delays to take load off evewho.com.
 
+The setup.py is currently only for creating windows executables with py2exe.
+
 
 Requirements
 ============
