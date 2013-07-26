@@ -16,7 +16,7 @@ class APIError(Exception):
 def corpmembers(corpid):
     """Get a list of all members of the corporation with id corpid.
 
-    retruns a list of tuples (charname, charid)"""
+    returns a list of tuples (charname, charid)"""
 
     members = []
     curpage = 0
