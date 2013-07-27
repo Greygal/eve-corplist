@@ -18,12 +18,15 @@ if len(argv) <= 1:
 
 corpname = argv[1]
 
+# corp name -> id
 result_object = api.query('/eve/CharacterID', {'names': corpname})
 corpid = result_object.result.rowset.row.attrib['characterID']
 
+# get character list and sort the result
 characters = evewho.corpmembers(corpid)
 characters.sort(key=lambda x: (x[0].upper(), x[0].islower()))
 
+# create html output
 print('<table>')
 
 for character_info in characters:
