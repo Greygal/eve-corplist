@@ -36,9 +36,9 @@ for character_info in characters:
     print('\t\t<td>%s</td>' % charname)
     print('\t\t<td><a href="http://evewho.com/pilot/%s">evewho</a></td>' %
           charname)
-    print('\t\t<td class="igblink" onclick="CCPEVE.showInfo(1377, ''%s)">'
+    print('\t\t<td class="igblink" onclick="CCPEVE.showInfo(1377, %s)">'
           'showinfo</td>' % charid)
-    print('\t\t<td class="igblink" onclick="CCPEVE.addContact(''%s)">'
+    print('\t\t<td class="igblink" onclick="CCPEVE.addContact(%s)">'
           'watchlist</td>' % charid)
     print('\t</tr>')
 
