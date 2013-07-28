@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2
 
 # This Source Code Form is subject to the terms of the Mozilla Public
 # License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -27,19 +27,29 @@ characters = evewho.corpmembers(corpid)
 characters.sort(key=lambda x: (x[0].upper(), x[0].islower()))
 
 # create html output
+print('<!DOCTYPE html>')
+print('<html>')
+print('<head>')
+print('<title>%s member list</title>' % corpname)
+print('<link rel="stylesheet" type="text/css" href="style.css" />')
+print('</head>')
+print('<body>')
+print('<h1>%s member list</h1>' % corpname)
 print('<table>')
 
 for character_info in characters:
     charname, charid = character_info
 
-    print('\t<tr>')
-    print('\t\t<td>%s</td>' % charname)
-    print('\t\t<td><a href="http://evewho.com/pilot/%s">evewho</a></td>' %
+    print('<tr>')
+    print('<td>%s</td>' % charname)
+    print('<td><a href="http://evewho.com/pilot/%s">evewho</a></td>' %
           charname)
-    print('\t\t<td class="igblink" onclick="CCPEVE.showInfo(1377, %s)">'
+    print('<td class="igblink" onclick="CCPEVE.showInfo(1377, %s)">'
           'showinfo</td>' % charid)
-    print('\t\t<td class="igblink" onclick="CCPEVE.addContact(%s)">'
+    print('<td class="igblink" onclick="CCPEVE.addContact(%s)">'
           'watchlist</td>' % charid)
-    print('\t</tr>')
+    print('</tr>')
 
 print('</table>')
+print('</body>')
+print('</html>')
