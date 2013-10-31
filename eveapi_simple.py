@@ -5,6 +5,7 @@
 """eveapi_simple.py: simple eve api query helper"""
 
 from httplib import HTTPSConnection
+from urllib.parse import urlunsplit, urlencode
 from lxml import objectify
 
 
@@ -28,6 +29,4 @@ def _make_query_string(query, args):
         query = '/' + query
     if not query.endswith(".xml.aspx"):
         query += '.xml.aspx'
-    query_str = '?'.join(
-        [query, '&'.join(['='.join(map(str, i)) for i in args.items()])])
-    return query_str.replace(' ', '%20')
+    return urlunsplit(('', '', query, urlencode(args), ''))
