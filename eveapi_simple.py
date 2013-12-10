@@ -5,7 +5,8 @@
 """eveapi_simple.py: simple eve api query helper"""
 
 from httplib import HTTPSConnection
-from urllib.parse import urlunsplit, urlencode
+from urlparse import urlunsplit
+from urllib import urlencode
 from lxml import objectify
 
 
